@@ -32,17 +32,8 @@ namespace PickyApi.Controllers
                 return Ok(retorno);
             }
 
-            // Encoding object
-            Encoding encodingUTF8 = Encoding.UTF8;
-
-            // Encode string to byte array
-            Byte[] encodedBytes = encodingUTF8.GetBytes(mensagem.Message);
-            
-
-            // Decode to string
-            String decodedString = encodingUTF8.GetString(encodedBytes);
-            
-            retorno = new Resposta { MessageOut = "Mensagem recebida:" + decodedString , Delay = "0", Type = "1" };
+                        
+            retorno = new Resposta { MessageOut = "Mensagem recebida: seu numero é:" + mensagem.Number , Delay = "0", Type = "1" };
             return Ok(retorno);
         }
     }
